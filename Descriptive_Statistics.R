@@ -51,3 +51,33 @@ max(surveyData$JobSat2_rev, na.rm = T)
 median(surveyData$JobSat2_rev, na.rm = T)
 range(surveyData$Tenure_Yrs, na.rm = T)
 var(surveyData$Tenure_Yrs, na.rm = T)
+
+install.packages("psych")
+library(psych)
+describe(surveyData)
+
+describeBy(surveyData)
+
+
+##Automating computation
+str(iris)
+sapply(iris[,-5], mean, na.rm = T)
+sapply(iris[,-5], median, na.rm = T)
+sapply(iris[,-5], min, na.rm = T)
+sapply(iris[,-5], sd, na.rm = T)
+sapply(iris[,-5], var, na.rm = T)
+sapply(iris[,-5], range, na.rm = T)
+?sapply
+
+install.packages("Hmisc")
+library(Hmisc)
+
+sapply(iris[,-5], std.error, na.rm = T)
+
+describe(iris)
+
+install.packages("pastecs")
+library(pastecs)
+
+stat.desc(iris)
+
